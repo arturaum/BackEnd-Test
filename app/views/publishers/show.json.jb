@@ -1,0 +1,5 @@
+{
+  id: @publisher.id,
+  created_at: @publisher.created_at,
+  updated_at: @publisher.updated_at
+}

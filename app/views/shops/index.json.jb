@@ -1,0 +1,6 @@
+@shops.map do |shop|
+  {
+    id: shop.id,
+    url: shop_url(shop, format: :json)
+  }
+end

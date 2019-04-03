@@ -1,0 +1,20 @@
+default: &default
+  pool: 5
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: publisher_books
+  password:
+
+
+development:
+  <<: *default
+  database: publisher_books_dev
+
+test:
+  <<: *default
+  database: publisher_books_test
+
+production:
+  <<: *default
+  database: publisher_books

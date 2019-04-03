@@ -1,0 +1,5 @@
+{
+  id: @shop.id,
+  created_at: @shop.created_at,
+  updated_at: @shop.updated_at
+}

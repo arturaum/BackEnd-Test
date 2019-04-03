@@ -1,0 +1,6 @@
+@publishers.map do |publisher|
+  {
+    id: publisher.id,
+    url: publisher_url(publisher, format: :json)
+  }
+end
