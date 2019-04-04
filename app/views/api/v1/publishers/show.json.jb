@@ -1,0 +1,4 @@
+{
+    name: @publisher.name,
+    shops: @shops_array
+}

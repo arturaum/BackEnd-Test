@@ -10,24 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190403120321) do
+ActiveRecord::Schema.define(version: 20190403145122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.string "name"
-    t.string "author"
+    t.integer "composition_id"
     t.integer "publisher_id"
     t.integer "shop_id"
     t.boolean "sold", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author"], name: "index_books_on_author"
-    t.index ["name"], name: "index_books_on_name"
+    t.index ["composition_id"], name: "index_books_on_composition_id"
     t.index ["publisher_id", "shop_id"], name: "index_books_on_publisher_id_and_shop_id"
     t.index ["shop_id", "publisher_id"], name: "index_books_on_shop_id_and_publisher_id"
     t.index ["sold"], name: "index_books_on_sold"
+  end
+
+  create_table "compositions", force: :cascade do |t|
+    t.string "author"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author"], name: "index_compositions_on_author"
+    t.index ["name"], name: "index_compositions_on_name"
   end
 
   create_table "publishers", force: :cascade do |t|
